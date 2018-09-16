@@ -1,4 +1,4 @@
-package com.example.andjokelib;
+package com.mahersoua.andjokelib;
 
 import org.junit.Test;
 

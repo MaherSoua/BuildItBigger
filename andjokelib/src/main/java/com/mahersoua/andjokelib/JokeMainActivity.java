@@ -1,4 +1,4 @@
-package com.example.andjokelib;
+package com.mahersoua.andjokelib;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ public class JokeMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_joke_main);
+        setContentView(com.mahersoua.andjokelib.R.layout.activity_joke_main);
 
         String joke = "No Joke!";
         Intent intent = getIntent();
@@ -18,7 +18,7 @@ public class JokeMainActivity extends AppCompatActivity {
             joke = intent.getExtras().getString("joke");
         }
 
-        TextView jokeTv = findViewById(R.id.jokeTv);
+        TextView jokeTv = findViewById(com.mahersoua.andjokelib.R.id.jokeTv);
         jokeTv.setText(joke);
 
     }

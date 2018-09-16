@@ -1,4 +1,4 @@
-package com.example.andjokelib;
+package com.mahersoua.andjokelib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
