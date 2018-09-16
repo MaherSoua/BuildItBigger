@@ -13,6 +13,8 @@ buildscript {
 android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
+    flavorDimensions "version"
+
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
@@ -30,6 +32,28 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
+    }
+
+    productFlavors {
+        free {
+            applicationId "com.udacity.gradle.builditbigger.free"
+            dimension "version"
+        }
+
+        paid {
+            applicationId "com.udacity.gradle.builditbigger.paid"
+            dimension "version"
+        }
+    }
+    sourceSets {
+        paid { res.srcDirs = ['src/paid/res', 'src/paid/res/'] } 
+        free {res.srcDirs = ['src/free/res', 'src/free/res/'] }
     }
 }
 
@@ -56,7 +80,7 @@ dependencies {
     androidTestImplementation "com.android.support:support-annotations:$apiVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:$espressoVersion"
-    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espressoVersion";
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espressoVersion"
     androidTestImplementation "com.android.support.test:runner:$testUtils"
     androidTestImplementation "com.android.support.test:rules:$testUtils"
 }

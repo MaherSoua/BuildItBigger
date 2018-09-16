@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         if (mIdlingResource != null) {
             mIdlingResource.setIdleState(false);
         }
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
     }
 
     public String getResult() {
@@ -118,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, JokeMainActivity.class);
             intent.putExtra("joke", result);
             startActivity(intent);
+
+            findViewById(R.id.progressBar).setVisibility(View.GONE);
 
             if (mIdlingResource != null) {
                 mIdlingResource.setIdleState(true);
