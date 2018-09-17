@@ -1,7 +1,5 @@
 package com.udacity.gradle.builditbigger.test;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.rule.ActivityTestRule;
@@ -10,6 +8,12 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.udacity.gradle.builditbigger.MainActivity;
 import com.udacity.gradle.builditbigger.R;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -37,14 +41,6 @@ public class MainActivityInstrumentedTest {
     @After
     public void unregisterIdlingResource() {
         IdlingRegistry.getInstance().unregister(mIdlingResource);
-    }
-
-    @Test
-    public void useAppContextTest() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.udacity.gradle.builditbigger", appContext.getPackageName());
     }
 
     @Test
